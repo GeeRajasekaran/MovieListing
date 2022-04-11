@@ -1,2 +1,0 @@
-# MovieListing
-Movielisting app
