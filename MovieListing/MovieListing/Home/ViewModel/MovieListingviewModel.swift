@@ -23,4 +23,17 @@ class MovieListviewModel {
             
         }
     }
+    
+    func callUpcomingMovieListAPI(with pageNo: Int,
+                                successHandler: @escaping (_ content: UpcomingMovies) -> (),
+                                failureHandler: @escaping (_ error: Error) -> ()) {
+        NetworkManager.sharedInstance.performRequest(forAPI: .loadUpcomingList(apiKey: User.apiKey.rawValue, lang: "en-US", pageNumber: pageNo), responseType: UpcomingMovies.self)
+        { (homeResponse) in
+            successHandler(homeResponse)
+        } errorHandler: { (error) in
+            //FIXME: - Show proper error screen
+            print("~~~~IN API ERROR => \(error)~~~");
+            
+        }
+    }
 }

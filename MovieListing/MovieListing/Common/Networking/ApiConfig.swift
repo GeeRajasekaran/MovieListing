@@ -12,6 +12,7 @@ struct API {
     
 
     static let ServerURL = "https://api.themoviedb.org/3/movie/"
+    static let BaseUrl = "https://image.tmdb.org/t/p/w500"
 
 }
 
